@@ -1,4 +1,4 @@
-import { FiMic, FiBook, FiUsers, FiGlobe, FiPlay, FiVolume2 } from 'react-icons/fi';
+import { FiMic, FiBook, FiUsers, FiGlobe, FiPlay, FiVolume2, FiMove } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 
 const TherapyActivitiesCard = ({ user, therapyMethod }) => {
@@ -21,7 +21,7 @@ const TherapyActivitiesCard = ({ user, therapyMethod }) => {
     {
       id: 'sign',
       name: 'Sign Language',
-      icon: FiGlobe,
+      icon: FiMove,
       color: 'purple',
       duration: '20 min session'
     },
@@ -105,16 +105,14 @@ const TherapyActivitiesCard = ({ user, therapyMethod }) => {
         navigate('/hearing-practice');
         break;
       case 'sign':
-        // Navigate to sign language activities (coming soon)
-        alert('Sign Language activities coming soon!');
+        navigate('/sign-language');
         break;
       case 'reading':
         // Navigate to reading games (coming soon)
         alert('Reading Games coming soon!');
         break;
       case 'social':
-        // Navigate to social skills activities (coming soon)
-        alert('Social Skills activities coming soon!');
+        navigate('/social-skills');
         break;
       default:
         break;

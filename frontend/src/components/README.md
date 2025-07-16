@@ -47,6 +47,39 @@ components/
 │   │   └── index.js                 # Shared hearing component exports
 │   └── index.js          # Main hearing practice exports
 │
+├── sign-language/        # Sign language therapy with AI-based lessons
+│   ├── lessons/          # Individual lesson components
+│   │   ├── BasicSigns.jsx           # Lesson 1: Essential basic signs
+│   │   ├── FamilySigns.jsx          # Lesson 2: Family member signs
+│   │   ├── SimplePhrases.jsx        # Lesson 3: Combining signs into phrases
+│   │   ├── EverydayObjects.jsx      # Lesson 4: Common everyday objects
+│   │   ├── PracticeReinforcement.jsx # Lesson 5: Review and reinforcement
+│   │   └── index.js                 # Lesson component exports
+│   ├── shared/           # Shared sign language components
+│   │   ├── GestureRecognition.jsx   # Mock AI gesture recognition system
+│   │   ├── SignLearning.jsx         # Sign learning interface with tutorials
+│   │   ├── AIFeedback.jsx           # AI feedback and progress tracking
+│   │   ├── HandTracking.jsx         # Hand tracking visualization
+│   │   └── index.js                 # Shared sign language exports
+│   └── index.js          # Main sign language exports
+│
+├── sign-language/        # Sign language therapy with AI and computer vision
+│   ├── lessons/          # Individual lesson components
+│   │   ├── BasicSigns.jsx           # Lesson 1: Introduction to basic signs
+│   │   ├── FamilyMembers.jsx        # Lesson 2: Signs for family members
+│   │   ├── SimplePhrases.jsx        # Lesson 3: Simple phrase combinations
+│   │   ├── EverydayObjects.jsx      # Lesson 4: Common everyday objects
+│   │   ├── PracticeReinforcement.jsx # Lesson 5: Practice and reinforcement
+│   │   └── index.js                 # Lesson component exports
+│   ├── shared/           # Shared sign language components
+│   │   ├── GestureRecognition.jsx   # Mock computer vision gesture tracking
+│   │   ├── HandTracking.jsx         # Hand position tracking and feedback
+│   │   ├── SignProgress.jsx         # Sign language progress tracking
+│   │   ├── VoiceToSign.jsx          # Voice-to-sign translation component
+│   │   ├── SignFeedback.jsx         # Real-time sign feedback system
+│   │   └── index.js                 # Shared sign language exports
+│   └── index.js          # Main sign language exports
+│
 └── dashboard/             # Dashboard-specific components
     ├── HealthReportsCard.jsx        # Health reports and analytics (therapist-guided)
     ├── RecentSessionsCard.jsx       # Recent therapy sessions display

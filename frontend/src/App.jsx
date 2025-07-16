@@ -9,8 +9,32 @@ import SpeechPractice from './pages/SpeechPractice';
 import ArticulationHub from './pages/ArticulationHub';
 import HearingPractice from './pages/HearingPractice';
 import AuditoryAwarenessHub from './pages/AuditoryAwarenessHub';
+import SignLanguagePractice from './pages/SignLanguagePractice';
+import BasicSignsLesson from './pages/BasicSignsLesson';
+import SocialSkillsPlatform from './pages/SocialSkillsPlatform';
 import { SoundSafari, BuildAWordLab, MagicMirror, SoundSorter, KnightOfSounds } from './components/speech-practice';
 import { SoundHideAndSeek } from './components/hearing-practice';
+import { GestureRecognition } from './components/sign-language';
+import {
+  SignToPost,
+  SymbolExpression,
+  TextToSignTranslator,
+  SmartSuggestions,
+  SignMoments,
+  ExpressionBuilder,
+  TranslateWall,
+  LearningProgress,
+  SignOfTheDay,
+  PracticeMode,
+  PersonalizedLessons,
+  ExpressionFeed,
+  ReactionsSystem,
+  PrivateMessages,
+  GroupBoards,
+  SignFeedback,
+  EmotionDetection,
+  SuggestionsPanel
+} from './components/social-skills';
 
 function App() {
   return (
@@ -37,6 +61,39 @@ function App() {
           <Route path="/hearing-practice" element={<HearingPractice />} />
           <Route path="/hearing-practice/auditory-awareness" element={<AuditoryAwarenessHub />} />
           <Route path="/hearing-practice/auditory-awareness/sound-hide-seek" element={<SoundHideAndSeek />} />
+
+          {/* Sign Language Practice Routes */}
+          <Route path="/sign-language" element={<SignLanguagePractice />} />
+          <Route path="/sign-language/basic-signs" element={<BasicSignsLesson />} />
+
+          {/* Social Skills Platform Routes */}
+          <Route path="/social-skills" element={<SocialSkillsPlatform />} />
+
+          {/* Expression Creation Routes */}
+          <Route path="/social-skills/sign-to-post" element={<SignToPost />} />
+          <Route path="/social-skills/symbol-expression" element={<SymbolExpression />} />
+          <Route path="/social-skills/text-to-sign" element={<TextToSignTranslator />} />
+          <Route path="/social-skills/smart-suggestions" element={<SmartSuggestions />} />
+          <Route path="/social-skills/sign-moments" element={<SignMoments />} />
+          <Route path="/social-skills/expression-builder" element={<ExpressionBuilder />} />
+          <Route path="/social-skills/translate-wall" element={<TranslateWall />} />
+
+          {/* Learning & Personal Growth Routes */}
+          <Route path="/social-skills/learning-progress" element={<LearningProgress />} />
+          <Route path="/social-skills/sign-of-day" element={<SignOfTheDay />} />
+          <Route path="/social-skills/practice-mode" element={<PracticeMode />} />
+          <Route path="/social-skills/personalized-lessons" element={<PersonalizedLessons />} />
+
+          {/* Social & Interaction Routes */}
+          <Route path="/social-skills/expression-feed" element={<ExpressionFeed />} />
+          <Route path="/social-skills/reactions" element={<ReactionsSystem />} />
+          <Route path="/social-skills/private-messages" element={<PrivateMessages />} />
+          <Route path="/social-skills/group-boards" element={<GroupBoards />} />
+
+          {/* AI Tools & Feedback Routes */}
+          <Route path="/social-skills/sign-feedback" element={<SignFeedback />} />
+          <Route path="/social-skills/emotion-detection" element={<EmotionDetection />} />
+          <Route path="/social-skills/suggestions-panel" element={<SuggestionsPanel />} />
 
           {/* Verification flow */}
           <Route path="/age-verification" element={<AgeVerification />} />
