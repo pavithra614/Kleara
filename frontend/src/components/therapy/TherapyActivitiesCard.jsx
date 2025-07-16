@@ -1,6 +1,8 @@
 import { FiMic, FiBook, FiUsers, FiGlobe, FiPlay } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 const TherapyActivitiesCard = ({ user, therapyMethod }) => {
+  const navigate = useNavigate();
   const activities = [
     {
       id: 'speech',
@@ -79,6 +81,28 @@ const TherapyActivitiesCard = ({ user, therapyMethod }) => {
 
   const isTherapistSupervised = user.mode === 'Therapist-guided' && therapyMethod === 'therapist-supervised';
 
+  const handleActivityClick = (activityId) => {
+    switch (activityId) {
+      case 'speech':
+        navigate('/speech-practice');
+        break;
+      case 'sign':
+        // Navigate to sign language activities (coming soon)
+        alert('Sign Language activities coming soon!');
+        break;
+      case 'reading':
+        // Navigate to reading games (coming soon)
+        alert('Reading Games coming soon!');
+        break;
+      case 'social':
+        // Navigate to social skills activities (coming soon)
+        alert('Social Skills activities coming soon!');
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
       <div className="flex items-center justify-between mb-6">
@@ -110,6 +134,7 @@ const TherapyActivitiesCard = ({ user, therapyMethod }) => {
           return (
             <button
               key={activity.id}
+              onClick={() => handleActivityClick(activity.id)}
               className={`group p-6 border border-gray-200 rounded-xl ${colors.border} ${colors.hoverBgStatic} transition-all duration-200 focus:outline-none focus:ring-2 ${colors.focus} focus:ring-offset-2`}
             >
               <div className="flex flex-col items-center space-y-3">

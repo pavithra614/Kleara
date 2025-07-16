@@ -5,6 +5,9 @@ import Home from './pages/Home';
 import AgeVerification from './pages/AgeVerification';
 import VerificationStatus from './pages/VerificationStatus';
 import AdminDashboard from './pages/AdminDashboard';
+import SpeechPractice from './pages/SpeechPractice';
+import ArticulationHub from './pages/ArticulationHub';
+import { SoundSafari, BuildAWordLab, MagicMirror, SoundSorter, KnightOfSounds } from './components/speech-practice';
 
 function App() {
   return (
@@ -17,6 +20,15 @@ function App() {
 
           {/* Main application */}
           <Route path="/home" element={<Home />} />
+
+          {/* Speech Practice Routes */}
+          <Route path="/speech-practice" element={<SpeechPractice />} />
+          <Route path="/speech-practice/articulation" element={<ArticulationHub />} />
+          <Route path="/speech-practice/articulation/sound-safari" element={<SoundSafari />} />
+          <Route path="/speech-practice/articulation/build-word-lab" element={<BuildAWordLab />} />
+          <Route path="/speech-practice/articulation/magic-mirror" element={<MagicMirror />} />
+          <Route path="/speech-practice/articulation/sound-sorter" element={<SoundSorter />} />
+          <Route path="/speech-practice/articulation/knight-sounds" element={<KnightOfSounds />} />
 
           {/* Verification flow */}
           <Route path="/age-verification" element={<AgeVerification />} />

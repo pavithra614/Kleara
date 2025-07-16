@@ -18,6 +18,21 @@ components/
 │   ├── TherapyActivitiesCard.jsx    # Therapy activity buttons and options
 │   └── index.js           # Barrel exports for clean imports
 │
+├── speech-practice/       # Speech practice gamified activities
+│   ├── games/            # Individual game components
+│   │   ├── SoundSafari.jsx          # Jungle adventure sound practice
+│   │   ├── BuildAWordLab.jsx        # Drag-and-drop word building
+│   │   ├── MagicMirror.jsx          # Voice morphing feedback game
+│   │   ├── SoundSorter.jsx          # Sound discrimination puzzle
+│   │   ├── KnightOfSounds.jsx       # RPG-style final consonant practice
+│   │   └── index.js                 # Game component exports
+│   ├── shared/           # Shared speech practice components
+│   │   ├── SpeechRecognition.jsx    # Mock speech recognition system
+│   │   ├── GameProgress.jsx         # Progress tracking component
+│   │   ├── GameFeedback.jsx         # AI feedback display component
+│   │   └── index.js                 # Shared component exports
+│   └── index.js          # Main speech practice exports
+│
 └── dashboard/             # Dashboard-specific components
     ├── HealthReportsCard.jsx        # Health reports and analytics (therapist-guided)
     ├── RecentSessionsCard.jsx       # Recent therapy sessions display
