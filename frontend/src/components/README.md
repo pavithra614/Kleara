@@ -33,6 +33,20 @@ components/
 │   │   └── index.js                 # Shared component exports
 │   └── index.js          # Main speech practice exports
 │
+├── hearing-practice/      # Hearing practice auditory activities
+│   ├── games/            # Individual hearing game components
+│   │   ├── SoundHideAndSeek.jsx     # Puppy hiding directional sound detection
+│   │   ├── WheresTheSound.jsx       # Toy sound explorer matching game
+│   │   ├── PopSoundBubbles.jsx      # Bubble popping sound detection
+│   │   ├── SleepyTeddyWakeUp.jsx    # Teddy wake-up sound-response game
+│   │   └── index.js                 # Hearing game component exports
+│   ├── shared/           # Shared hearing practice components
+│   │   ├── AudioPlayer.jsx          # Audio playback and control system
+│   │   ├── SoundDetection.jsx       # Sound detection and feedback
+│   │   ├── HearingProgress.jsx      # Hearing-specific progress tracking
+│   │   └── index.js                 # Shared hearing component exports
+│   └── index.js          # Main hearing practice exports
+│
 └── dashboard/             # Dashboard-specific components
     ├── HealthReportsCard.jsx        # Health reports and analytics (therapist-guided)
     ├── RecentSessionsCard.jsx       # Recent therapy sessions display

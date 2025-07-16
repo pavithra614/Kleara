@@ -1,4 +1,4 @@
-import { FiMic, FiBook, FiUsers, FiGlobe, FiPlay } from 'react-icons/fi';
+import { FiMic, FiBook, FiUsers, FiGlobe, FiPlay, FiVolume2 } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 
 const TherapyActivitiesCard = ({ user, therapyMethod }) => {
@@ -12,6 +12,13 @@ const TherapyActivitiesCard = ({ user, therapyMethod }) => {
       duration: '15 min session'
     },
     {
+      id: 'hearing',
+      name: 'Hearing Practice',
+      icon: FiVolume2,
+      color: 'green',
+      duration: '12 min session'
+    },
+    {
       id: 'sign',
       name: 'Sign Language',
       icon: FiGlobe,
@@ -22,7 +29,7 @@ const TherapyActivitiesCard = ({ user, therapyMethod }) => {
       id: 'reading',
       name: 'Reading Games',
       icon: FiBook,
-      color: 'green',
+      color: 'indigo',
       duration: '25 min session'
     },
     {
@@ -60,6 +67,14 @@ const TherapyActivitiesCard = ({ user, therapyMethod }) => {
         focus: 'focus:ring-green-500',
         hoverBgStatic: 'hover:bg-green-50'
       },
+      indigo: {
+        bg: 'bg-indigo-100',
+        hoverBg: 'hover:bg-indigo-200',
+        text: 'text-indigo-600',
+        border: 'hover:border-indigo-300',
+        focus: 'focus:ring-indigo-500',
+        hoverBgStatic: 'hover:bg-indigo-50'
+      },
       orange: {
         bg: 'bg-orange-100',
         hoverBg: 'hover:bg-orange-200',
@@ -85,6 +100,9 @@ const TherapyActivitiesCard = ({ user, therapyMethod }) => {
     switch (activityId) {
       case 'speech':
         navigate('/speech-practice');
+        break;
+      case 'hearing':
+        navigate('/hearing-practice');
         break;
       case 'sign':
         // Navigate to sign language activities (coming soon)

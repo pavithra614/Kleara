@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FiArrowLeft, FiHome, FiShield, FiSword } from 'react-icons/fi';
+import { FiArrowLeft, FiHome, FiShield, FiZap } from 'react-icons/fi';
 import { SpeechRecognition, GameProgress, GameFeedback } from '../shared';
 
 const KnightOfSounds = () => {
@@ -254,7 +254,7 @@ const KnightOfSounds = () => {
                     onClick={handleStartBattle}
                     className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-bold transition-colors"
                   >
-                    <FiSword className="w-5 h-5 inline mr-2" />
+                    <FiZap className="w-5 h-5 inline mr-2" />
                     Start Battle!
                   </button>
                 </div>

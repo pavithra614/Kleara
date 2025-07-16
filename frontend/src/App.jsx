@@ -7,7 +7,10 @@ import VerificationStatus from './pages/VerificationStatus';
 import AdminDashboard from './pages/AdminDashboard';
 import SpeechPractice from './pages/SpeechPractice';
 import ArticulationHub from './pages/ArticulationHub';
+import HearingPractice from './pages/HearingPractice';
+import AuditoryAwarenessHub from './pages/AuditoryAwarenessHub';
 import { SoundSafari, BuildAWordLab, MagicMirror, SoundSorter, KnightOfSounds } from './components/speech-practice';
+import { SoundHideAndSeek } from './components/hearing-practice';
 
 function App() {
   return (
@@ -29,6 +32,11 @@ function App() {
           <Route path="/speech-practice/articulation/magic-mirror" element={<MagicMirror />} />
           <Route path="/speech-practice/articulation/sound-sorter" element={<SoundSorter />} />
           <Route path="/speech-practice/articulation/knight-sounds" element={<KnightOfSounds />} />
+
+          {/* Hearing Practice Routes */}
+          <Route path="/hearing-practice" element={<HearingPractice />} />
+          <Route path="/hearing-practice/auditory-awareness" element={<AuditoryAwarenessHub />} />
+          <Route path="/hearing-practice/auditory-awareness/sound-hide-seek" element={<SoundHideAndSeek />} />
 
           {/* Verification flow */}
           <Route path="/age-verification" element={<AgeVerification />} />
