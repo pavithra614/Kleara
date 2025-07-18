@@ -13,7 +13,8 @@ import {
   FiAlertTriangle,
   FiCalendar,
   FiUser,
-  FiBriefcase
+  FiBriefcase,
+  FiDollarSign
 } from 'react-icons/fi';
 
 const AdminDashboard = () => {
@@ -28,19 +29,19 @@ const AdminDashboard = () => {
   const mockRequests = [
     {
       id: 'VER-1234567890',
-      fullName: 'Alex Johnson',
+      fullName: 'Uvindu Thamodya',
       age: 16,
-      email: 'alex.johnson@email.com',
-      phone: '+1-555-0123',
+      email: 'uvindu.thamodya@email.com',
+      phone: '+94-77-123-4567',
       submittedDate: '2024-01-15',
       status: 'pending',
       documentType: 'government-id',
       isMinor: true,
-      guardianName: 'Sarah Johnson',
-      guardianEmail: 'sarah.johnson@email.com',
+      guardianName: 'Thamodya Perera',
+      guardianEmail: 'thamodya.perera@email.com',
       reasonForTherapy: 'Social anxiety and communication difficulties',
-      emergencyContact: 'Sarah Johnson',
-      emergencyPhone: '+1-555-0124',
+      emergencyContact: 'Thamodya Perera',
+      emergencyPhone: '+94-77-123-4568',
       documents: {
         primaryDocument: 'drivers_license.jpg',
         secondaryDocument: 'school_enrollment.pdf',
@@ -261,7 +262,7 @@ const AdminDashboard = () => {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-6 rounded-lg shadow-sm text-white">
             <div className="flex items-center justify-between">
               <div>
@@ -286,6 +287,22 @@ const AdminDashboard = () => {
                 <div className="text-2xl font-bold">{stats.pending} pending</div>
               </div>
               <FiUsers className="w-12 h-12 text-green-200" />
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-6 rounded-lg shadow-sm text-white">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Revenue Dashboard</h3>
+                <p className="text-orange-100 mb-4">View detailed revenue analytics</p>
+                <button
+                  onClick={() => navigate('/admin/revenue')}
+                  className="bg-white text-orange-600 px-4 py-2 rounded-lg font-medium hover:bg-orange-50 transition-colors"
+                >
+                  View Revenue
+                </button>
+              </div>
+              <FiDollarSign className="w-12 h-12 text-orange-200" />
             </div>
           </div>
         </div>

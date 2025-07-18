@@ -21,7 +21,9 @@ import TherapistVideo from './pages/TherapistVideo';
 import TherapistApplication from './pages/TherapistApplication';
 import TherapistApplicationStatus from './pages/TherapistApplicationStatus';
 import AdminTherapistReview from './pages/AdminTherapistReview';
+import AdminRevenueDashboard from './pages/AdminRevenueDashboard';
 import EnterpriseApplication from './pages/EnterpriseApplication';
+import AITranslationHub from './pages/AITranslationHub';
 import { SoundSafari, BuildAWordLab, MagicMirror, SoundSorter, KnightOfSounds } from './components/speech-practice';
 import { SoundHideAndSeek } from './components/hearing-practice';
 import { GestureRecognition } from './components/sign-language';
@@ -75,6 +77,9 @@ function App() {
           {/* Sign Language Practice Routes */}
           <Route path="/sign-language" element={<SignLanguagePractice />} />
           <Route path="/sign-language/basic-signs" element={<BasicSignsLesson />} />
+
+          {/* AI Translation Hub */}
+          <Route path="/ai-translation-hub" element={<AITranslationHub />} />
 
           {/* Social Skills Platform Routes */}
           <Route path="/social-skills" element={<SocialSkillsPlatform />} />
@@ -130,6 +135,7 @@ function App() {
           {/* Admin dashboard */}
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/therapist-applications" element={<AdminTherapistReview />} />
+          <Route path="/admin/revenue" element={<AdminRevenueDashboard />} />
 
           {/* Default redirect to sign in */}
           <Route path="/" element={<Navigate to="/signin" replace />} />

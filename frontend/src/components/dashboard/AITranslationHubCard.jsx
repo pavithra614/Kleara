@@ -1,6 +1,8 @@
-import { FiMic, FiGlobe, FiMessageSquare } from 'react-icons/fi';
+import { FiMic, FiGlobe, FiMessageSquare, FiArrowRight } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 const AITranslationHubCard = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
       <div className="flex items-center justify-between mb-6">
@@ -18,20 +20,27 @@ const AITranslationHubCard = () => {
           <p className="text-blue-100 mb-6">
             Convert between sign language, speech, and text instantly. Connect with others regardless of communication barriers.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <button className="inline-flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-white/50">
+          <div className="flex flex-wrap gap-3 mb-4">
+            <div className="inline-flex items-center px-3 py-1 bg-white/20 text-white rounded-full text-sm">
               <FiMic className="w-4 h-4 mr-2" />
               Speech to Text
-            </button>
-            <button className="inline-flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-white/50">
+            </div>
+            <div className="inline-flex items-center px-3 py-1 bg-white/20 text-white rounded-full text-sm">
               <FiGlobe className="w-4 h-4 mr-2" />
               Sign to Speech
-            </button>
-            <button className="inline-flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-white/50">
+            </div>
+            <div className="inline-flex items-center px-3 py-1 bg-white/20 text-white rounded-full text-sm">
               <FiMessageSquare className="w-4 h-4 mr-2" />
               Text to Sign
-            </button>
+            </div>
           </div>
+          <button
+            onClick={() => navigate('/ai-translation-hub')}
+            className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
+          >
+            Launch Translation Hub
+            <FiArrowRight className="w-4 h-4 ml-2" />
+          </button>
         </div>
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/10 to-blue-300/20 rounded-full blur-xl"></div>
       </div>

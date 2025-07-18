@@ -29,7 +29,7 @@ import {
 const Home = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    name: 'Alex Johnson',
+    name: 'Uvindu Thamodya',
     age: 16,
     therapyLevel: 'Intermediate',
     totalProgress: 68,
