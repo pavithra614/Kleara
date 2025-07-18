@@ -12,6 +12,16 @@ import AuditoryAwarenessHub from './pages/AuditoryAwarenessHub';
 import SignLanguagePractice from './pages/SignLanguagePractice';
 import BasicSignsLesson from './pages/BasicSignsLesson';
 import SocialSkillsPlatform from './pages/SocialSkillsPlatform';
+import FindTherapists from './pages/FindTherapists';
+import TherapistProfile from './pages/TherapistProfile';
+import BookTherapist from './pages/BookTherapist';
+import MyTherapist from './pages/MyTherapist';
+import TherapistChat from './pages/TherapistChat';
+import TherapistVideo from './pages/TherapistVideo';
+import TherapistApplication from './pages/TherapistApplication';
+import TherapistApplicationStatus from './pages/TherapistApplicationStatus';
+import AdminTherapistReview from './pages/AdminTherapistReview';
+import EnterpriseApplication from './pages/EnterpriseApplication';
 import { SoundSafari, BuildAWordLab, MagicMirror, SoundSorter, KnightOfSounds } from './components/speech-practice';
 import { SoundHideAndSeek } from './components/hearing-practice';
 import { GestureRecognition } from './components/sign-language';
@@ -95,12 +105,31 @@ function App() {
           <Route path="/social-skills/emotion-detection" element={<EmotionDetection />} />
           <Route path="/social-skills/suggestions-panel" element={<SuggestionsPanel />} />
 
+          {/* Therapist Routes - Only for therapist-guided mode */}
+          <Route path="/find-therapists" element={<FindTherapists />} />
+          <Route path="/therapists/:id/profile" element={<TherapistProfile />} />
+          <Route path="/therapists/:id/book" element={<BookTherapist />} />
+          <Route path="/my-therapist" element={<MyTherapist />} />
+          <Route path="/therapists/:id/chat" element={<TherapistChat />} />
+          <Route path="/therapists/:id/video" element={<TherapistVideo />} />
+
+          {/* Therapist Application Routes */}
+          <Route path="/work-as-therapist" element={<TherapistApplication />} />
+          <Route path="/therapist-application-status" element={<TherapistApplicationStatus />} />
+
+          {/* Enterprise Application Routes */}
+          <Route path="/enterprise-application" element={<EnterpriseApplication />} />
+
+          {/* Test route for debugging */}
+          <Route path="/test-route" element={<div style={{padding: '20px'}}><h1>Test Route Works!</h1><p>If you can see this, routing is working fine.</p></div>} />
+
           {/* Verification flow */}
           <Route path="/age-verification" element={<AgeVerification />} />
           <Route path="/verification-status" element={<VerificationStatus />} />
 
           {/* Admin dashboard */}
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/therapist-applications" element={<AdminTherapistReview />} />
 
           {/* Default redirect to sign in */}
           <Route path="/" element={<Navigate to="/signin" replace />} />

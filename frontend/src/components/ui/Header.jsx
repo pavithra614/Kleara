@@ -1,7 +1,14 @@
-import { FiSettings, FiLogOut, FiTrendingUp, FiFileText } from 'react-icons/fi';
+import { FiSettings, FiLogOut, FiTrendingUp, FiFileText, FiSearch, FiBriefcase } from 'react-icons/fi';
 import { HiAcademicCap } from 'react-icons/hi2';
+import { useNavigate } from 'react-router-dom';
 
 const Header = ({ user, therapyMethod, onSignOut }) => {
+  const navigate = useNavigate();
+
+  const handleFindTherapists = () => {
+    navigate('/find-therapists');
+  };
+
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-6">
@@ -31,6 +38,25 @@ const Header = ({ user, therapyMethod, onSignOut }) => {
             </div>
           </div>
           <div className="flex items-center space-x-3">
+            {/* Work as Therapist button - for testing */}
+            <button
+              onClick={() => navigate('/work-as-therapist')}
+              className="inline-flex items-center px-4 py-2 border border-green-300 rounded-lg text-sm font-medium text-green-700 bg-green-50 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors"
+            >
+              <FiBriefcase className="w-4 h-4 mr-2" />
+              Work as Therapist
+            </button>
+
+            {/* Find Therapists button for therapist-guided users */}
+            {user.mode === 'Therapist-guided' && (
+              <button
+                onClick={handleFindTherapists}
+                className="inline-flex items-center px-4 py-2 border border-blue-300 rounded-lg text-sm font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+              >
+                <FiSearch className="w-4 h-4 mr-2" />
+                Find Therapists
+              </button>
+            )}
             <button className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
               <FiSettings className="w-4 h-4 mr-2" />
               Settings

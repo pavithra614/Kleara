@@ -20,7 +20,10 @@ import {
   HealthReportsCard,
   RecentSessionsCard,
   AITranslationHubCard,
-  TherapistConnectionCard
+  TherapistConnectionCard,
+  TherapistNavigationCard,
+  WorkAsTherapistCard,
+  EnterprisePackageCard
 } from '../components/dashboard';
 
 const Home = () => {
@@ -111,6 +114,10 @@ const Home = () => {
     console.log('View health reports');
   };
 
+  const handleFindTherapists = () => {
+    navigate('/find-therapists');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -138,6 +145,11 @@ const Home = () => {
 
           {/* Right Column - Therapy Activities & Recent Sessions */}
           <div className="lg:col-span-2 space-y-6">
+            {/* Therapist Navigation - Only for Therapist-guided mode */}
+            {user.mode === 'Therapist-guided' && (
+              <TherapistNavigationCard user={user} therapyMethod={therapyMethod} />
+            )}
+
             {/* Health Reports Section - Only for Therapist-supervised mode */}
             {user.mode === 'Therapist-guided' && therapyMethod === 'therapist-supervised' && (
               <HealthReportsCard healthReports={healthReports} />
@@ -146,6 +158,14 @@ const Home = () => {
             <TherapyActivitiesCard user={user} therapyMethod={therapyMethod} />
             <RecentSessionsCard recentSessions={recentSessions} />
             <AITranslationHubCard />
+
+            {/* Work as Therapist Card - Show for all users */}
+            <WorkAsTherapistCard user={user} />
+
+            {/* Enterprise Package Card - Show for all users */}
+            <EnterprisePackageCard user={user} />
+
+            {/* Keep the original connection card for backup/additional info */}
             <TherapistConnectionCard user={user} therapyMethod={therapyMethod} />
           </div>
         </div>

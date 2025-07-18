@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
-  FiUsers, 
-  FiClock, 
-  FiCheckCircle, 
-  FiXCircle, 
+import {
+  FiUsers,
+  FiClock,
+  FiCheckCircle,
+  FiXCircle,
   FiEye,
   FiDownload,
   FiFilter,
@@ -12,7 +12,8 @@ import {
   FiRefreshCw,
   FiAlertTriangle,
   FiCalendar,
-  FiUser
+  FiUser,
+  FiBriefcase
 } from 'react-icons/fi';
 
 const AdminDashboard = () => {
@@ -255,6 +256,36 @@ const AdminDashboard = () => {
                 <p className="text-sm font-medium text-gray-600">Rejected</p>
                 <p className="text-2xl font-bold text-gray-900">{stats.rejected}</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Actions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-6 rounded-lg shadow-sm text-white">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Therapist Applications</h3>
+                <p className="text-blue-100 mb-4">Review and manage therapist applications</p>
+                <button
+                  onClick={() => navigate('/admin/therapist-applications')}
+                  className="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium hover:bg-blue-50 transition-colors"
+                >
+                  Review Applications
+                </button>
+              </div>
+              <FiBriefcase className="w-12 h-12 text-blue-200" />
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-green-500 to-green-600 p-6 rounded-lg shadow-sm text-white">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-semibold mb-2">User Verifications</h3>
+                <p className="text-green-100 mb-4">Manage therapist-guided mode requests</p>
+                <div className="text-2xl font-bold">{stats.pending} pending</div>
+              </div>
+              <FiUsers className="w-12 h-12 text-green-200" />
             </div>
           </div>
         </div>

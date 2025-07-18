@@ -1,7 +1,10 @@
-import { FiUser, FiVideo } from 'react-icons/fi';
+import { FiUser, FiVideo, FiSearch } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 const TherapistConnectionCard = ({ user, therapyMethod }) => {
+  const navigate = useNavigate();
   const isSupervised = user.mode === 'Therapist-guided' && therapyMethod === 'therapist-supervised';
+  const isTherapistGuided = user.mode === 'Therapist-guided';
 
   return (
     <div className={`bg-white rounded-xl shadow-sm border p-6 ${
@@ -36,7 +39,7 @@ const TherapistConnectionCard = ({ user, therapyMethod }) => {
             <FiUser className="w-6 h-6 text-white" />
           </div>
           <div>
-            <div className="font-semibold text-gray-900">Dr. Sarah Johnson</div>
+            <div className="font-semibold text-gray-900">Dr. Shanika Madumali</div>
             <div className="text-sm text-gray-600">Speech-Language Pathologist</div>
             <div className="flex items-center space-x-1 mt-1">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -73,6 +76,27 @@ const TherapistConnectionCard = ({ user, therapyMethod }) => {
                 Your therapist is monitoring your session and can provide real-time guidance and feedback.
               </p>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Find Therapists option for therapist-guided users without active therapist */}
+      {isTherapistGuided && !isSupervised && (
+        <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm text-gray-800 font-medium">Need a therapist?</p>
+              <p className="text-xs text-gray-600 mt-1">
+                Browse and book sessions with qualified therapists
+              </p>
+            </div>
+            <button
+              onClick={() => navigate('/find-therapists')}
+              className="px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors flex items-center"
+            >
+              <FiSearch className="w-4 h-4 mr-1" />
+              Find Therapists
+            </button>
           </div>
         </div>
       )}
